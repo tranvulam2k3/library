@@ -1,6 +1,6 @@
-package com.example.demo.mapping.user;
+package com.example.demo.mapping.book;
 
-import com.example.demo.dto.user.BookResponse;
+import com.example.demo.dto.book.BookResponse;
 import com.example.demo.entity.Book;
 import org.springframework.stereotype.Component;
 

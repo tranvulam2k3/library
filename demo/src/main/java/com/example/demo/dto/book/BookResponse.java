@@ -1,4 +1,4 @@
-package com.example.demo.dto.user;
+package com.example.demo.dto.book;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

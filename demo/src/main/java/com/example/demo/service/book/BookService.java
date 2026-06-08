@@ -1,11 +1,11 @@
-package com.example.demo.service;
+package com.example.demo.service.book;
 
 import com.example.demo.dto.PageResponse;
-import com.example.demo.dto.user.BookResponse;
+import com.example.demo.dto.book.BookResponse;
 import com.example.demo.entity.Book;
 import com.example.demo.enums.ErrorCode;
 import com.example.demo.exception.AppException;
-import com.example.demo.mapping.user.BookMapping;
+import com.example.demo.mapping.book.BookMapping;
 import com.example.demo.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
