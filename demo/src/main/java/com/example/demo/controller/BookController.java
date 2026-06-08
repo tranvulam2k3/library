@@ -2,8 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.PageResponse;
-import com.example.demo.dto.user.BookResponse;
-import com.example.demo.service.BookService;
+import com.example.demo.dto.book.BookResponse;
+import com.example.demo.service.book.BookService;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.AccessLevel;
