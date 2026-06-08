@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.ApiResponse;
+import com.example.demo.dto.PageResponse;
 import com.example.demo.dto.user.BorrowDetailResponse;
 import com.example.demo.dto.user.CreateBorrowDetailRequest;
 import com.example.demo.service.BorrowDetailService;
@@ -9,9 +10,7 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/borrow-details")
@@ -34,5 +33,21 @@ public class BorrowDetailController {
                         .message("Borrow detail created successfully")
                         .data(response)
                         .build());
+    }
+
+    @GetMapping
+    public ResponseEntity<ApiResponse<PageResponse<com.example.demo.dto.borrowDetails.BorrowDetailResponse>>> getAllBorrowDetails(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        PageResponse<com.example.demo.dto.borrowDetails.BorrowDetailResponse> response = borrowDetailService.getAllBorrowDetails(page, size);
+
+        ApiResponse<PageResponse<com.example.demo.dto.borrowDetails.BorrowDetailResponse>> body = ApiResponse.<PageResponse<com.example.demo.dto.borrowDetails.BorrowDetailResponse>>builder()
+                .success(true)
+                .message("Get all borrow details sucessfully")
+                .data(response)
+                .build();
+
+        return ResponseEntity.ok(body);
     }
 }

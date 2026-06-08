@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.PageResponse;
 import com.example.demo.dto.user.BorrowDetailResponse;
 import com.example.demo.dto.user.CreateBorrowDetailRequest;
 import com.example.demo.entity.Book;
@@ -11,10 +12,15 @@ import com.example.demo.repository.BookRepository;
 import com.example.demo.repository.BorrowDetailRepository;
 import com.example.demo.repository.BorrowTicketRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -69,5 +75,25 @@ public class BorrowDetailService {
         bookRepository.save(book);
 
         return borrowDetailMapping.toResponse(savedBorrowDetail);
+    }
+
+    public PageResponse<com.example.demo.dto.borrowDetails.BorrowDetailResponse> getAllBorrowDetails(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<BorrowDetail> borrowDetailPage = borrowDetailRepository.findAll(pageable);
+
+        List<com.example.demo.dto.borrowDetails.BorrowDetailResponse> responses = new ArrayList<>();
+
+        for (BorrowDetail borrowDetail : borrowDetailPage.getContent()) {
+            responses.add(borrowDetailMapping.toBorrowDetailResponse(borrowDetail));
+        }
+
+        PageResponse<com.example.demo.dto.borrowDetails.BorrowDetailResponse> pageResponse = new PageResponse<>();
+        pageResponse.setItems(responses);
+        pageResponse.setPage(borrowDetailPage.getNumber());
+        pageResponse.setSize(borrowDetailPage.getSize());
+        pageResponse.setTotalItems(borrowDetailPage.getTotalElements());
+        pageResponse.setTotalPages(borrowDetailPage.getTotalPages());
+
+        return pageResponse;
     }
 }
