@@ -1838,3 +1838,90 @@ Caused by: org.springframework.data.core.PropertyReferenceException: No property
 2026-06-08T13:54:45.753+07:00  INFO 16004 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-08T13:54:45.756+07:00  INFO 16004 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-08T13:54:45.762+07:00  INFO 16004 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T13:54:54.024+07:00  INFO 1748 --- [demo] [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 21.0.10 with PID 1748 (E:\techzen-case-study\library\demo\build\classes\java\main started by Hieu in E:\techzen-case-study\library\demo)
+2026-06-08T13:54:54.029+07:00  INFO 1748 --- [demo] [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-06-08T13:54:54.847+07:00  INFO 1748 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T13:54:54.914+07:00  INFO 1748 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2026-06-08T13:54:55.359+07:00  INFO 1748 --- [demo] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-06-08T13:54:55.380+07:00  INFO 1748 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T13:54:55.381+07:00  INFO 1748 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-06-08T13:54:55.443+07:00  INFO 1748 --- [demo] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1359 ms
+2026-06-08T13:54:55.713+07:00  INFO 1748 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T13:54:55.877+07:00  INFO 1748 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2fde9469
+2026-06-08T13:54:55.879+07:00  INFO 1748 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T13:54:55.905+07:00  INFO 1748 --- [demo] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/library-management?currentSchema=public (PostgreSQL 18.3)
+2026-06-08T13:54:55.968+07:00  INFO 1748 --- [demo] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.034s)
+2026-06-08T13:54:56.070+07:00  INFO 1748 --- [demo] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2026-06-08T13:54:56.073+07:00  INFO 1748 --- [demo] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-06-08T13:54:56.167+07:00  INFO 1748 --- [demo] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T13:54:56.230+07:00  INFO 1748 --- [demo] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-06-08T13:54:56.711+07:00  INFO 1748 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T13:54:56.769+07:00  WARN 1748 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-08T13:54:56.798+07:00  INFO 1748 --- [demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/library-management?currentSchema=public]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: library-management/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T13:54:57.831+07:00  INFO 1748 --- [demo] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T13:54:57.838+07:00  INFO 1748 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T13:54:57.904+07:00  INFO 1748 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T13:54:58.202+07:00  WARN 1748 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T13:54:58.614+07:00  INFO 1748 --- [demo] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-06-08T13:54:58.621+07:00  INFO 1748 --- [demo] [main] com.example.demo.DemoApplication         : Started DemoApplication in 5.091 seconds (process running for 5.555)
+2026-06-08T13:55:06.445+07:00  INFO 1748 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08T13:55:06.446+07:00  INFO 1748 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-08T13:55:06.447+07:00  INFO 1748 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-08T13:55:07.820+07:00  INFO 1748 --- [demo] [http-nio-8080-exec-6] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 347 ms
+2026-06-08T14:03:42.649+07:00  INFO 1748 --- [demo] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-08T14:03:42.691+07:00  INFO 1748 --- [demo] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-08T14:03:42.711+07:00  INFO 1748 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T14:03:42.739+07:00  INFO 1748 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-08T14:03:42.754+07:00  INFO 1748 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-08T14:41:01.363+07:00  INFO 17692 --- [demo] [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 21.0.10 with PID 17692 (E:\techzen-case-study\library\demo\build\classes\java\main started by Hieu in E:\techzen-case-study\library\demo)
+2026-06-08T14:41:01.368+07:00  INFO 17692 --- [demo] [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-06-08T14:41:02.226+07:00  INFO 17692 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-08T14:41:02.299+07:00  INFO 17692 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2026-06-08T14:41:02.895+07:00  INFO 17692 --- [demo] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-06-08T14:41:02.912+07:00  INFO 17692 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-08T14:41:02.912+07:00  INFO 17692 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-06-08T14:41:02.994+07:00  INFO 17692 --- [demo] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1580 ms
+2026-06-08T14:41:03.311+07:00  INFO 17692 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-08T14:41:03.557+07:00  INFO 17692 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@447521e
+2026-06-08T14:41:03.558+07:00  INFO 17692 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-08T14:41:03.607+07:00  INFO 17692 --- [demo] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/library-management?currentSchema=public (PostgreSQL 18.3)
+2026-06-08T14:41:03.710+07:00  INFO 17692 --- [demo] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.049s)
+2026-06-08T14:41:03.728+07:00  INFO 17692 --- [demo] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2026-06-08T14:41:03.732+07:00  INFO 17692 --- [demo] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-06-08T14:41:03.861+07:00  INFO 17692 --- [demo] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-08T14:41:03.946+07:00  INFO 17692 --- [demo] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-06-08T14:41:04.501+07:00  INFO 17692 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-08T14:41:04.577+07:00  WARN 17692 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-08T14:41:04.602+07:00  INFO 17692 --- [demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/library-management?currentSchema=public]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: library-management/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-08T14:41:05.733+07:00  INFO 17692 --- [demo] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-08T14:41:05.744+07:00  INFO 17692 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-08T14:41:05.839+07:00  INFO 17692 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-08T14:41:06.185+07:00  WARN 17692 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-08T14:41:06.642+07:00  INFO 17692 --- [demo] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-06-08T14:41:06.647+07:00  INFO 17692 --- [demo] [main] com.example.demo.DemoApplication         : Started DemoApplication in 5.807 seconds (process running for 6.463)
+2026-06-08T14:41:21.531+07:00  INFO 17692 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08T14:41:21.533+07:00  INFO 17692 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-08T14:41:21.536+07:00  INFO 17692 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-08T14:41:22.981+07:00  INFO 17692 --- [demo] [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 258 ms
