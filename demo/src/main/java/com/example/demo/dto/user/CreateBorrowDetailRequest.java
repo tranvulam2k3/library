@@ -9,7 +9,7 @@ public class CreateBorrowDetailRequest {
 
     private Integer ticketId;
 
-    private Integer bookId;
+    private Long bookId;
 
     private Integer quantity;
 }
