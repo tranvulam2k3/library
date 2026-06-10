@@ -11,9 +11,9 @@ import java.math.BigDecimal;
 @Builder
 public class BorrowDetailResponse {
 
-    private Long borrowDetailId;
-    private Long ticketId;
-    private Long bookId;
+    private Integer borrowDetailId;
+    private Integer ticketId;
+    private Integer bookId;
     private Integer quantity;
     private String status;
     private BigDecimal fineAmount;

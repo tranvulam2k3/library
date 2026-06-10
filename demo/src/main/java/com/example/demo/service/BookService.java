@@ -27,7 +27,7 @@ public class BookService {
     BookRepository bookRepository;
     BookMapping bookMapping;
 
-    public BookResponse getBookById(Long id) {
+    public BookResponse getBookById(Integer id) {
         Optional<Book> optionalBook = bookRepository.findById(id);
         if (optionalBook.isEmpty()) {
             throw new AppException(ErrorCode.BOOK_NOT_FOUND, "Book not found with ID: " + id);

@@ -9,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BookResponse {
-    Long bookId;
+    Integer bookId;
     String title;
     String authorName;
     String publisherName;

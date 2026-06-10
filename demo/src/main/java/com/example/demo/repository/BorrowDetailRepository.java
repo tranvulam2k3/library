@@ -8,11 +8,11 @@ import java.util.List;
 
 @Repository
 public interface BorrowDetailRepository
-        extends JpaRepository<BorrowDetail, Long> {
+        extends JpaRepository<BorrowDetail, Integer> {
 
     List<BorrowDetail> findByStatus(String status);
 
-    List<BorrowDetail> findByBorrowTicketTicketId(Long ticketId);
+    List<BorrowDetail> findByBorrowTicketTicketId(Integer ticketId);
 
-    List<BorrowDetail> findByBookBookId(Long bookId);
+    List<BorrowDetail> findByBookBookId(Integer bookId);
 }

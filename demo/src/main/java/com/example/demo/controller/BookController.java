@@ -19,7 +19,7 @@ public class BookController {
     BookService bookService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<BookResponse>> getBookById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse<BookResponse>> getBookById(@PathVariable Integer id) {
         BookResponse response = bookService.getBookById(id);
         ApiResponse<BookResponse> body = ApiResponse.<BookResponse>builder()
                 .success(true)

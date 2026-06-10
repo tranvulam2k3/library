@@ -10,6 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
+import com.example.demo.exception.NotFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -90,6 +91,29 @@ public class GlobalExceptionHandler {
                                 .build();
 
                 return ResponseEntity.status(HttpStatus.CONFLICT).body(body);
+        }
+
+        @ExceptionHandler(NotFoundException.class)
+        public ResponseEntity<ApiResponse<Void>> handleNotFound(
+                NotFoundException ex,
+                HttpServletRequest request) {
+
+                log.warn("Not found at [{}]: {}",
+                        request.getRequestURI(),
+                        ex.getMessage());
+
+                ApiResponse<Void> body = ApiResponse.<Void>builder()
+                        .success(false)
+                        .message(ex.getMessage())
+                        .error(ApiResponse.ApiError.builder()
+                                .code("NOT_FOUND")
+                                .message(ex.getMessage())
+                                .path(request.getRequestURI())
+                                .build())
+                        .build();
+
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(body);
         }
 
         @ExceptionHandler(Exception.class)

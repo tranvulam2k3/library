@@ -24,7 +24,7 @@ public class BorrowDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "borrow_detail_id")
-    Long borrowDetailId;
+    Integer borrowDetailId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_id", nullable = false)

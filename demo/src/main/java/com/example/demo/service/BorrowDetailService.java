@@ -5,7 +5,7 @@ import com.example.demo.dto.user.CreateBorrowDetailRequest;
 import com.example.demo.entity.Book;
 import com.example.demo.entity.BorrowDetail;
 import com.example.demo.entity.BorrowTicket;
-import com.example.demo.mapping.user.BorrowDetailMapping;
+import com.example.demo.exception.NotFoundException;
 import com.example.demo.mapping.user.BorrowDetailMapping;
 import com.example.demo.repository.BookRepository;
 import com.example.demo.repository.BorrowDetailRepository;
@@ -28,16 +28,18 @@ public class BorrowDetailService {
 
     public BorrowDetailResponse create(CreateBorrowDetailRequest req) {
 
-        Optional<BorrowTicket> optionalTicket = borrowTicketRepository.findById(req.getTicketId());
+        Optional<BorrowTicket> optionalTicket =
+                borrowTicketRepository.findById(req.getTicketId());
 
         if (optionalTicket.isEmpty()) {
-            throw new RuntimeException("Borrow ticket not found");
+            throw new NotFoundException("Borrow ticket not found");
         }
 
-        Optional<Book> optionalBook = bookRepository.findById(req.getBookId());
+        Optional<Book> optionalBook =
+                bookRepository.findById(req.getBookId());
 
         if (optionalBook.isEmpty()) {
-            throw new RuntimeException("Book not found");
+            throw new NotFoundException("Book not found");
         }
 
         BorrowTicket ticket = optionalTicket.get();

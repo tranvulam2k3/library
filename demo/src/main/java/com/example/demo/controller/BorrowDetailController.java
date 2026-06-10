@@ -5,7 +5,7 @@ import com.example.demo.dto.user.BorrowDetailResponse;
 import com.example.demo.dto.user.CreateBorrowDetailRequest;
 import com.example.demo.service.BorrowDetailService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

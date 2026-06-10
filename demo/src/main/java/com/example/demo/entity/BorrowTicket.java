@@ -21,7 +21,7 @@ public class BorrowTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ticket_id")
-    Long ticketId;
+    Integer ticketId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reader_id", nullable = false)
