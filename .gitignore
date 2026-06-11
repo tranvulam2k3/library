@@ -1,0 +1,8 @@
+
+# IDE
+.idea/
+
+# Logs
+logs/
+*.log
+*.log.*

@@ -2,7 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.PageResponse;
-import com.example.demo.dto.user.BorrowDetailResponse;
+import com.example.demo.dto.borrowDetails.BorrowDetailResponse;
+import com.example.demo.dto.borrowDetails.ReturnBorrowDetailRequest;
 import com.example.demo.dto.user.CreateBorrowDetailRequest;
 import com.example.demo.service.BorrowDetailService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -45,6 +46,23 @@ public class BorrowDetailController {
         ApiResponse<PageResponse<com.example.demo.dto.borrowDetails.BorrowDetailResponse>> body = ApiResponse.<PageResponse<com.example.demo.dto.borrowDetails.BorrowDetailResponse>>builder()
                 .success(true)
                 .message("Get all borrow details sucessfully")
+                .data(response)
+                .build();
+
+        return ResponseEntity.ok(body);
+    }
+
+    // API - Cập nhật trạng thái trả sách
+    @PutMapping("/{id}/return")
+    public ResponseEntity<ApiResponse<BorrowDetailResponse>> returnBorrowDetail(
+            @PathVariable Long id,
+            @RequestBody ReturnBorrowDetailRequest request
+    ) {
+        BorrowDetailResponse response = borrowDetailService.returnBorrowDetail(id, request);
+
+        ApiResponse<BorrowDetailResponse> body = ApiResponse.<BorrowDetailResponse>builder()
+                .success(true)
+                .message("Return book successfully")
                 .data(response)
                 .build();
 
