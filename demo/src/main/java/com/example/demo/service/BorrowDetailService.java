@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.PageResponse;
+import com.example.demo.dto.borrowDetails.ReturnBorrowDetailRequest;
 import com.example.demo.dto.user.BorrowDetailResponse;
 import com.example.demo.dto.user.CreateBorrowDetailRequest;
 import com.example.demo.entity.Book;
@@ -95,5 +96,10 @@ public class BorrowDetailService {
         pageResponse.setTotalPages(borrowDetailPage.getTotalPages());
 
         return pageResponse;
+    }
+
+    // Cập nhật trạng thái trả sách
+    public BorrowDetailResponse returnBorrowDetail(Long id, ReturnBorrowDetailRequest req) {
+        B
     }
 }
