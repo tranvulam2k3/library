@@ -21,7 +21,7 @@ public class BorrowDetailResponse {
     LocalDate returnDate;
     String status;
     BigDecimal fineAmount;
-    String fineReasone;
+    String fineReason;
     LocalDateTime createdAt;
-    LocalDateTime updateAt;
+    LocalDateTime updatedAt;
 }
