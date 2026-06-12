@@ -132,4 +132,14 @@ public class BorrowDetailService {
 
         return borrowDetailMapping.toBorrowDetailResponse(saved);
     }
+
+    // Lấy danh sách sách mượn quá hạn
+    public List<BorrowDetailResponse> getOverdueBorrowDetails() {
+        List<BorrowDetail> borrowDetails =
+                borrowDetailRepository.findOverdueBorrowDetails(LocalDate.now());
+
+        return borrowDetails.stream()
+                .map(borrowDetailMapping::toBorrowDetailResponse)
+                .toList();
+    }
 }

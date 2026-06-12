@@ -1,33 +1,26 @@
 package com.example.demo.mapping.user;
 
-
-import com.example.demo.dto.user.BorrowDetailResponse;
+import com.example.demo.dto.borrowDetails.BorrowDetailResponse;
 import com.example.demo.entity.BorrowDetail;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BorrowDetailMapping {
-    public BorrowDetailResponse toResponse(BorrowDetail borrowDetail) {
-        return BorrowDetailResponse.builder()
-                .borrowDetailId(borrowDetail.getBorrowDetailId())
-                .ticketId(borrowDetail.getBorrowTicket().getTicketId())
-                .bookId(borrowDetail.getBook().getBookId())
-                .quantity(borrowDetail.getQuantity())
-                .status(borrowDetail.getStatus())
-                .fineAmount(borrowDetail.getFineAmount())
-                .build();
-    }
 
-    public com.example.demo.dto.borrowDetails.BorrowDetailResponse toBorrowDetailResponse(BorrowDetail borrowDetail) {
+    public BorrowDetailResponse toBorrowDetailResponse(BorrowDetail borrowDetail) {
         if (borrowDetail == null) {
             return null;
         }
 
-        com.example.demo.dto.borrowDetails.BorrowDetailResponse response = new com.example.demo.dto.borrowDetails.BorrowDetailResponse();
+        BorrowDetailResponse response = new BorrowDetailResponse();
 
         response.setBorrowDetailId(borrowDetail.getBorrowDetailId());
 
         if (borrowDetail.getBorrowTicket() != null) {
+            response.setTicketId(borrowDetail.getBorrowTicket().getTicketId());
+        }
+
+        if (borrowDetail.getBook() != null) {
             response.setBookId(borrowDetail.getBook().getBookId());
             response.setBookTitle(borrowDetail.getBook().getTitle());
         }
@@ -36,9 +29,9 @@ public class BorrowDetailMapping {
         response.setReturnDate(borrowDetail.getReturnDate());
         response.setStatus(borrowDetail.getStatus());
         response.setFineAmount(borrowDetail.getFineAmount());
-        response.setFineReasone(borrowDetail.getFineReason());
+        response.setFineReason(borrowDetail.getFineReason());
         response.setCreatedAt(borrowDetail.getCreatedAt());
-        response.setUpdateAt(borrowDetail.getUpdatedAt());
+        response.setUpdatedAt(borrowDetail.getUpdatedAt());
 
         return response;
     }

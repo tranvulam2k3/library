@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/borrow-details")
 @RequiredArgsConstructor
@@ -63,6 +65,20 @@ public class BorrowDetailController {
         ApiResponse<BorrowDetailResponse> body = ApiResponse.<BorrowDetailResponse>builder()
                 .success(true)
                 .message("Return book successfully")
+                .data(response)
+                .build();
+
+        return ResponseEntity.ok(body);
+    }
+
+    // API - Lấy danh sách sách mượn quá hạn
+    @GetMapping("/overdue")
+    public ResponseEntity<ApiResponse<List<BorrowDetailResponse>>> getOverdueBorrowDetails() {
+        List<BorrowDetailResponse> response = borrowDetailService.getOverdueBorrowDetails();
+
+        ApiResponse<List<BorrowDetailResponse>> body = ApiResponse.<List<BorrowDetailResponse>>builder()
+                .success(true)
+                .message("Get overdue borrow details successfully")
                 .data(response)
                 .build();
 
